@@ -1124,7 +1124,7 @@ pre .javascript .function {
 .posts-expand {
   padding-top: 40px;
 }
-@media (max-width: 980px) {
+@media (max-width: 1080px) {
   .posts-expand {
     margin: 0 20px;
   }
@@ -1692,7 +1692,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #063c6a;
+  background: #f6c7ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2869,4 +2869,7 @@ pre .javascript .function {
   border: 2px dashed #fff;
   animation: cycle 2s 0.5s forwards;
   transition: border-radius 2s;
+}
+.site-author-name {
+  font-size: 16px;
 }
