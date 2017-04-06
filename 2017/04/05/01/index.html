@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="GostHand's Blog">
 <meta property="og:description" content="PHP基础PHP变量global关键字php中想要在函数内部访问全局变量要在全局变量前加一个global关键字
 123456789101112131415&amp;lt;?php	$x=5;	$y=10;	functiong getSun()&amp;#123;		global $x,$y;		$y=$x+$y;	&amp;#125;	getSun();	echo $y;	//输出15	//上述代码也可以写成$GLOBA">
-<meta property="og:updated_time" content="2017-04-06T06:55:20.576Z">
+<meta property="og:updated_time" content="2017-04-06T11:01:17.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP基础">
 <meta name="twitter:description" content="PHP基础PHP变量global关键字php中想要在函数内部访问全局变量要在全局变量前加一个global关键字
@@ -512,6 +512,9 @@
 <h3 id="PHP中-GLOBALS"><a href="#PHP中-GLOBALS" class="headerlink" title="PHP中$GLOBALS"></a>PHP中$GLOBALS</h3><p>$GLOBALS是PHP的一个超级全局变量组，在一个PHP脚本的全部作用域中都可以访问<br>$GLOBALS是一个包含了全部变量的全局组合数组。变量的名字就是数组的键</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line">	$x=<span class="number">75</span>；</div><div class="line">	$y=<span class="number">25</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">addition</span><span class="params">()</span></span>&#123;</div><div class="line">		$GLOBALS[<span class="string">"z"</span>]=$GLOBALS[<span class="string">"x"</span>]+$GLOBALS[<span class="string">"y"</span>];</div><div class="line">	&#125;</div><div class="line">	addition();</div><div class="line">	<span class="keyword">echo</span> $z; <span class="comment">//打印100（z 是一个$GLOBALS数组中的超级全局变量，该变量同样可以在函数外访问）</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="PHP中-SERVER"><a href="#PHP中-SERVER" class="headerlink" title="PHP中$_SERVER"></a>PHP中$_SERVER</h2><p>$_SERVER是一个包含了诸如头信息(header)、路径(path)、以及脚本位置(script locations)等信息的数组。这个数组中的项目由web服务器创建。不能保证每个服务器都提供全部项目；服务器可能</p>
+<!-- UY BEGIN -->
+<p><div id="uyan_frame"></div></p>
+<p><script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130159"></script><br><!-- UY END --></p>
 
       
     </div>
