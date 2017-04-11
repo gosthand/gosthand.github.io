@@ -247,6 +247,161 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/JS中计时器的原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gost Hand">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GostHand's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/11/JS中计时器的原理/" itemprop="url">
+                  JS中计时器的原理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T18:59:16+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JS中的定时器"><a href="#JS中的定时器" class="headerlink" title="JS中的定时器"></a>JS中的定时器</h2><p>我们都知道JS中定时器分为两种定时器,这两种定时器都是属于BOM下的Window对象的方法。下面我们就来聊聊JS中的两种定时器,</p>
+<h3 id="延时定时器"><a href="#延时定时器" class="headerlink" title="延时定时器"></a>延时定时器</h3><p>首先，我们来聊聊延时定时器，延时定时器，顾名思义就是延迟一段时间后会触发的定时器.它相当于一个定时炸弹,经过一段时间过后会触发的一个定时器,当触发完成后定时器就会自动销毁，所以说延时定时器只会触发一次。相当于一个定时炸弹，爆炸过后就没了。  </p>
+<ul>
+<li><p>其语法格式如下：  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//语法格式</span></div><div class="line"><span class="keyword">var</span> timerId=setTimeOut(callback, time, lang);</div><div class="line"><span class="comment">//参数详解:</span></div><div class="line">	<span class="comment">//callback:必选参数，回调函数，时间到了就会执行的函数代码语句.</span></div><div class="line">	<span class="comment">//time:必选参数,延时的时间,定义我们需要让其延时的时间(毫秒值).</span></div><div class="line">	<span class="comment">//lang:可选参数,定义脚本语言的类型，可以是：JScript | VBScript | JavaScript（这里不做过多介绍）</span></div><div class="line"></div><div class="line"><span class="comment">//其返回值是一个id，就是这个定时器的id值,这个id值用于标识我们创建的定时器.</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>清除延时定时器<br>某些时候，我们设置了延时定时器，当处于特定的条件下的时候，我们又不想让其触发,就像我们埋下炸弹，我们要给自己留条能拆除炸弹的后路一样，我们设置了，延时定时器，也要有种方法能够清除这个延时定时器</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//语法结构：</span></div><div class="line">clearTimeOut(timerId);</div><div class="line"><span class="comment">//参数详解</span></div><div class="line">	<span class="comment">//timerId：必选参数,表示定义的延时定时器的id值.比如说这样就清除了上面我们定义的那个延时定时器.</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="间歇定时器"><a href="#间歇定时器" class="headerlink" title="间歇定时器"></a>间歇定时器</h3><p>间歇定时器，就是当我们给其设定时间和一个回调函数后，它会每隔设定的时间去执行一次我们所设定的回调函数.只要我们不手动清除，它就会一直执行下去。直至浏览器窗口的关闭.</p>
+<ul>
+<li><p>其语法格式如下： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//语法格式：</span></div><div class="line"><span class="keyword">var</span> intervalID = setInterval(func, delay, lang);</div><div class="line"><span class="comment">//参数详解:</span></div><div class="line">	<span class="comment">//func：必选参数,重复执行的函数,</span></div><div class="line">	<span class="comment">//delay：必选参数每次延迟的毫秒数</span></div><div class="line">	<span class="comment">//lang：可选参数,定义脚本语言的类型，可以是：JScript | VBScript | JavaScript（这里不做过多介绍）</span></div><div class="line"><span class="comment">//其返回值是一个id，就是这个定时器的id值,这个id值用于标识我们创建的定时器.一般用于清除此定时器.</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>清除间歇定时器<br>间歇定时器，如果我们不手动清除它，它就会一直循环执行下去，产生死循环，所以，我们一般情况下，在设置一个间歇定时器的时候，都会给其设定一个清除这个间歇定时器的条件.下面我们看看如何清除间歇定时器.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//语法格式：</span></div><div class="line">clearInterval(intervalID);</div><div class="line"><span class="comment">//参数详解</span></div><div class="line">	<span class="comment">//intervalID：必选参数,表示标识定义的间歇定时器的id值.比如说这样就清除了上面我们定义的那个间歇定时器.</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="关于任务队列与浏览器线程"><a href="#关于任务队列与浏览器线程" class="headerlink" title="关于任务队列与浏览器线程"></a>关于任务队列与浏览器线程</h2><p>上面，我们说到了JS中的两种计时器,那么，在js中计时器的原理是什么样的呢?要弄清除这个问题，我们首先要搞清楚两个概念:任务队列和浏览器线程.</p>
+<h3 id="浏览器线程"><a href="#浏览器线程" class="headerlink" title="浏览器线程"></a>浏览器线程</h3><p>我们都知道，js是单线程的，那么什么是线程呢?线程就是程序执行中一个单一的顺序控制流程，是程序执行流的最小单元。(也就是说，在同一个线程中程序执行流是一步一步的往下执行的,执行完上一步才会去执行下一步)。<br>其实，浏览器是有很多线程的，它有五大常驻线程:</p>
+<ol>
+<li>js引擎线程(也就是我们浏览器解析js代码的线程)</li>
+<li>GUI渲染页面的线程</li>
+<li>浏览器事件线程</li>
+<li>浏览器定时器触发线程</li>
+<li>浏览器http请求线程</li>
+</ol>
+<p>这五大常驻线程，各司其职。每当JS引擎线程遇到对应的任务时，它就会将任务转交给对应得线程去处理，然后接收对应线程的处理结果.不过这里要注意的是JS引擎线程和GUI渲染线程是互斥的，也就是说在JavaScript引擎运行脚本期间,浏览器渲染线程都是处于挂起状态的,相当于被”冻结”了.具体示意图如下图所示:<br><img src="/2017/04/11/JS中计时器的原理/1.jpg" alt="浏览器线程示意图"><br> 从这张图我们可以知道JS引擎线程首先执行回调函数块，然后是执行点击事件回调，接着是执行定时器的线程，最后在执行其他的线程。</p>
+<h3 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h3><p>上面，我们说到，js是单线程的，所以说在js中，所有的任务都是要去排队执行的。前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。我们都知道CPU的处理效率是非常之高的，所以说很多时候，CPU的大部分区域都是出于闲置状态。如果我们要js对我们写的js文件中的代码去一行一行的解析，那会大大的浪费资源的，而且很大程度上影响了页面的加载速度.所以，我们js的设计者意识到这一点.我们可以挂起在等待中的任务。先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。 </p>
+<p>所以说，js中任务是分为两种形式的一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务，只有”任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。</p>
+<p>因为这个设定JS形成了如下的执行模式:<br><img src="/2017/04/11/JS中计时器的原理/2.jpg" alt="js执行模式"></p>
+<h2 id="JS中计时器的原理"><a href="#JS中计时器的原理" class="headerlink" title="JS中计时器的原理"></a>JS中计时器的原理</h2><p>上面，我们说到了任务列队和浏览器线程。下面，我们来谈谈JS中的计时器是如何工作的.  </p>
+<p>举个例子来说:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="string">"alert('定时器!')"</span>,<span class="number">0</span>);</div><div class="line">alert(<span class="string">"测试"</span>);</div></pre></td></tr></table></figure></p>
+<p>首先JS线程读取到setTimeout定时器，这个时候就会将任务转交给定时器的线程，然后跳过定时器继续执行，这个时候你就看到了弹出框的内容为测试，然后因为定时器的时间为0，所以一执行定时器线程就会即可将弹出框为定时器字样的任务添加到主线程（JS引擎线程）的队列之后，等待JS引擎的调用，这个时候我们看到的结果是先弹出测试，然后再弹出定时器。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/关于继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -837,129 +992,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/08/关于requireJs的介绍/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gost Hand">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GostHand's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/08/关于requireJs的介绍/" itemprop="url">
-                  关于requireJs的介绍
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-08T22:05:55+08:00">
-                2017-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="require-Js"><a href="#require-Js" class="headerlink" title="require Js"></a>require Js</h1><h2 id="文章背景"><a href="#文章背景" class="headerlink" title="文章背景"></a>文章背景</h2><p>最近，我们在老师的带领下开发博学谷项目,可以说这个系统是我们大家一起学习以来所做的一个比较完整的项目，或者可以说是最接近完整的项目了吧.在这个项目中，我们开始接触模块化的东西,说实话，模块化真的是一个好东西,现在的it事业，乃至不仅仅我们it事业，一切都在向着模块化去发展.它能使我们即使面对海量的代码还能很好的管理分工.甚至，在开发过程中，我们只要编写自己特有的核心业务逻辑就行，其他的常见部分我们可以引用别的已经写好的模块.这样，使我们的开发更加便捷方便.  </p>
-<p><hr><br><strong>模块化</strong><br><br><br>模块化就是将很多能够实现一个功能的代码，放在一起，就是一个模块。很早的时候，我们将几个函数放在一起，这也是一个模块（当然，这种模块是没有意义的模块）。    </p>
-<h2 id="模块化现如今的分类"><a href="#模块化现如今的分类" class="headerlink" title="模块化现如今的分类"></a>模块化现如今的分类</h2><p>现如今，我国市场上模块化的标准总的来说，分为三类。以commonjs为标准、以AMD（Asynchronous Module Definition）为标准，这可不是我们常见的那个处理器产商。还有国人写出来的以CMD（Common Module Definition）为标准。其中，amd和cmd可以说是在commonjs的基础上完成的。实现，commonjs完成最好的要数node了，实现Amd最好就是我们今天要说的requirejs,这个接下来再说。以CMD为标准，实现最好的可以说就是淘宝团队推出的seejs了。</p>
-<h2 id="未完待续。。。。"><a href="#未完待续。。。。" class="headerlink" title="未完待续。。。。"></a>未完待续。。。。</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1009,7 +1041,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1022,7 +1054,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -1138,8 +1170,6 @@
   
 
 
-  
-
 
 
 
@@ -1161,9 +1191,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
