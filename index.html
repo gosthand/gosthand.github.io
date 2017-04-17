@@ -722,7 +722,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/关于表单数据的传输问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/JS中表单数据的传输问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gost Hand">
@@ -744,7 +744,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/10/关于表单数据的传输问题/" itemprop="url">
+                <a class="post-title-link" href="/2017/04/10/JS中表单数据的传输问题/" itemprop="url">
                   关于表单数据的传输问题
                 </a>
               
@@ -800,7 +800,7 @@
         
           
             <h1 id="表单数据的提交"><a href="#表单数据的提交" class="headerlink" title="表单数据的提交"></a>表单数据的提交</h1><p>我们都知道我们客户端要实现和服务器端的互交要向后端去提交数据并从后端接收数据，而我们常用的方式也就是利用form表单去提交。在我们实际开发的过程中，form表单的提交也是十分重要的一项技术。下面我们就来谈谈关于表单数据的提交。</p>
-<h2 id="关于提交方式"><a href="#关于提交方式" class="headerlink" title="关于提交方式"></a>关于提交方式</h2><p>说起提交方式，我们要提到的就是HTTP协议了。我们都知道，HTTP协议请求格式分为四个模块，分别是：请求行、请求头、请求空行、请求体。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">GET /books/?sex=man&amp;name=Professional HTTP/1.1</div><div class="line">Host: www.wrox.com</div><div class="line">User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)</div><div class="line">Gecko/20050225 Firefox/1.0.1</div><div class="line">Connection: Keep-Alive</div><div class="line"></div><div class="line">POST / HTTP/1.1</div><div class="line">Host: www.wrox.com</div><div class="line">User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)</div><div class="line">Gecko/20050225 Firefox/1.0.1</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Content-Length: 40</div><div class="line">Connection: Keep-Alive</div><div class="line">     （----此处空一行----）</div><div class="line">name=Professional%20Ajax&amp;publisher=Wiley</div></pre></td></tr></table></figure></p>
+<h2 id="关于提交方式"><a href="#关于提交方式" class="headerlink" title="关于提交方式"></a>关于提交方式</h2><p>说起提交方式，我们要提到的就是HTTP协议了。我们都知道，HTTP协议请求格式分为四个模块，分别是：请求行、请求头、请求空行、请求体。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">GET /books/?sex=man&amp;name=Professional HTTP/1.1</div><div class="line">Host: www.wrox.com</div><div class="line">User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)</div><div class="line">Gecko/20050225 Firefox/1.0.1</div><div class="line">Connection: Keep-Alive</div><div class="line"></div><div class="line">POST / HTTP/1.1</div><div class="line">Host: www.wrox.com</div><div class="line">User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)</div><div class="line">Gecko/20050225 Firefox/1.0.1</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Content-Length: 40</div><div class="line">Connection: Keep-Alive</div><div class="line">     （----此处空一行----）                           </div><div class="line">name=Professional%20Ajax&amp;publisher=Wiley</div></pre></td></tr></table></figure></p>
 <p>在请求头中，一般就会说明请求类型.在我们HTTP协议中定义了以下几种常见的请求或者说互交方法:</p>
 <ol>
 <li>GET：请求获取Request-URI所标识的资源 (查)</li>
@@ -1124,16 +1124,9 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+<div>
+  <a href="http://www.miitbeian.gov.cn/">备案：皖ICP备17007942号-1</a>
+<div>
 
 
         

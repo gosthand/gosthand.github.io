@@ -1,0 +1,723 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="表单,数据传输,加密," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="表单数据的提交我们都知道我们客户端要实现和服务器端的互交要向后端去提交数据并从后端接收数据，而我们常用的方式也就是利用form表单去提交。在我们实际开发的过程中，form表单的提交也是十分重要的一项技术。下面我们就来谈谈关于表单数据的提交。
+关于提交方式说起提交方式，我们要提到的就是HTTP协议了。我们都知道，HTTP协议请求格式分为四个模块，分别是：请求行、请求头、请求空行、请求体。如下：123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于表单数据的传输问题">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/JS中表单数据的传输问题/index.html">
+<meta property="og:site_name" content="GostHand's Blog">
+<meta property="og:description" content="表单数据的提交我们都知道我们客户端要实现和服务器端的互交要向后端去提交数据并从后端接收数据，而我们常用的方式也就是利用form表单去提交。在我们实际开发的过程中，form表单的提交也是十分重要的一项技术。下面我们就来谈谈关于表单数据的提交。
+关于提交方式说起提交方式，我们要提到的就是HTTP协议了。我们都知道，HTTP协议请求格式分为四个模块，分别是：请求行、请求头、请求空行、请求体。如下：123">
+<meta property="og:updated_time" content="2017-04-14T10:59:42.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于表单数据的传输问题">
+<meta name="twitter:description" content="表单数据的提交我们都知道我们客户端要实现和服务器端的互交要向后端去提交数据并从后端接收数据，而我们常用的方式也就是利用form表单去提交。在我们实际开发的过程中，form表单的提交也是十分重要的一项技术。下面我们就来谈谈关于表单数据的提交。
+关于提交方式说起提交方式，我们要提到的就是HTTP协议了。我们都知道，HTTP协议请求格式分为四个模块，分别是：请求行、请求头、请求空行、请求体。如下：123">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/JS中表单数据的传输问题/"/>
+
+
+
+
+
+  <title> 关于表单数据的传输问题 | GostHand's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GostHand's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Adversity is a good discipline</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/JS中表单数据的传输问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gost Hand">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GostHand's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于表单数据的传输问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T13:58:44+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="表单数据的提交"><a href="#表单数据的提交" class="headerlink" title="表单数据的提交"></a>表单数据的提交</h1><p>我们都知道我们客户端要实现和服务器端的互交要向后端去提交数据并从后端接收数据，而我们常用的方式也就是利用form表单去提交。在我们实际开发的过程中，form表单的提交也是十分重要的一项技术。下面我们就来谈谈关于表单数据的提交。</p>
+<h2 id="关于提交方式"><a href="#关于提交方式" class="headerlink" title="关于提交方式"></a>关于提交方式</h2><p>说起提交方式，我们要提到的就是HTTP协议了。我们都知道，HTTP协议请求格式分为四个模块，分别是：请求行、请求头、请求空行、请求体。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">GET /books/?sex=man&amp;name=Professional HTTP/1.1</div><div class="line">Host: www.wrox.com</div><div class="line">User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)</div><div class="line">Gecko/20050225 Firefox/1.0.1</div><div class="line">Connection: Keep-Alive</div><div class="line"></div><div class="line">POST / HTTP/1.1</div><div class="line">Host: www.wrox.com</div><div class="line">User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)</div><div class="line">Gecko/20050225 Firefox/1.0.1</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Content-Length: 40</div><div class="line">Connection: Keep-Alive</div><div class="line">     （----此处空一行----）                           </div><div class="line">name=Professional%20Ajax&amp;publisher=Wiley</div></pre></td></tr></table></figure></p>
+<p>在请求头中，一般就会说明请求类型.在我们HTTP协议中定义了以下几种常见的请求或者说互交方法:</p>
+<ol>
+<li>GET：请求获取Request-URI所标识的资源 (查)</li>
+<li>POST：在Request-URI所标识的资源后附加新的数据 （改）</li>
+<li>PUT：请求服务器存储一个资源，并用Request-URI作为其标识 （增）</li>
+<li>DELETE：请求服务器删除Request-URI所标识的资源 （删）</li>
+<li>OPTIONS： 请求查询服务器的性能，或者查询与资源相关的选项和需求</li>
+<li>HEAD：请求获取由Request-URI所标识的资源的响应消息报头</li>
+<li>TRACE：请求服务器回送收到的请求信息，主要用于测试或诊断</li>
+<li>CONNECT：保留将来使用<br>当然，我们前端常用的也就是前两种，下面，我们来聊聊GET和POST提交数据的不同之处。</li>
+</ol>
+<h3 id="GET提交"><a href="#GET提交" class="headerlink" title="GET提交"></a>GET提交</h3><p>GET提交方式请求的数据会附加到浏览器url的后面，我们在地址栏可以看到请求的数据内容。所以GET方式发送的数据量会比较少，而且，GET方式发送的数据相对来说比较不安全。不过，正因为GET提交的数据量小，且是随着url一起提交给服务端的，所以它的数据提交效率比较快。所以，我们平常在实际开发中，一般使用GET提交用来信息的获取操作.在保证安全性的前提下最大限度的提升网页的效率。</p>
+<h3 id="POST提交"><a href="#POST提交" class="headerlink" title="POST提交"></a>POST提交</h3><p>POST提交方式，在设计的最初是用来修改服务器资源的，但后来，在我们的使用中，渐渐的将它的作用范围扩大了。使它不仅仅用来修改服务器资源。相对于GET方式来说，它的特性还是比较明显的。POST提交的数据不会显示在url中，所以相对来说POST提交是比较安全的。而且，post提交的数据量也是比GET提交的数据量要大的多。所以，我们一般利用POST提交方式来给服务器设发送数据，设置信息，或者数据量比较大的，安全要求比较高的信息.</p>
+<h2 id="关于数据提交的安全性问题"><a href="#关于数据提交的安全性问题" class="headerlink" title="关于数据提交的安全性问题"></a>关于数据提交的安全性问题</h2><p>上面我们说的数据的提交方式，并且有所提及GET方式提交数据是附加到URL后面，以明文显示的。所以，比较不安全。POST提交方式不会在URl上显示。相对安全一点，那么，可能有人要问：“POST提交方式到底是明文传输，还是密文传输呢？”<br>要搞清楚这点，首先，我们要认识到一点：密文到底是什么，是不是就是看不见的就是密文呢？当然，在坐的都知道，密文不是这样。密文就是加密后的“文本”,某些时候，我们可以看到密文，但是，就算你看到也是没有用的，你只要不会对密文解密。那么，你看到的仅仅就是一串字符串而已。根本就不知道这段字符串显示的是什么内容。如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">6L+Z5piv5LuA5LmI5LiA5Liy5Luj56CB77yM5oiR55yf55qE5LiN55+l6YGT5ZWK    //这是什么一串代码，我真的不知道啊</div></pre></td></tr></table></figure></p>
+<p>那么，POST提交是明文还是密文提交呢？<br>其实，POST提交数据也是明文的方式提交的，只是我们用户比较不容易看到而已，当然，我们能在HTTP请求头中能够看到，所以，在我们的实际开发中，这种以明文提交的数据还是比较不安全的，所以，我们一般在POST提交的时候，会先给其加密再来将其提交到服务器端。到达服务端后，由服务器直接存储获得提交的数据，下次从服务器获取时再给其解密。当然，还有另一种方式，通过HTTPS协议即ssl+Http协议来提交数据，但这种提交方式在一定的程度上影响网页效率。这里不做过多的介绍，有兴趣的同学可以转 <a href="https://www.baidu.com" target="_blank" rel="external">百度</a>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>get方式的安全性较post差些，数据量较小些，如若包含机密或者数据量过大的话，建议用post提交。</li>
+<li>在做数据查询的时候，建议使用GET方式，而在做数据添加、修改删除的时候，建议用POST方式</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/表单/" rel="tag"># 表单</a>
+          
+            <a href="/tags/数据传输/" rel="tag"># 数据传输</a>
+          
+            <a href="/tags/加密/" rel="tag"># 加密</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/09/关于事件冒泡和事件获取/" rel="next" title="关于事件冒泡和事件获取">
+                <i class="fa fa-chevron-left"></i> 关于事件冒泡和事件获取
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/10/面向对象和类的区别/" rel="prev" title="面向对象和类的区别">
+                面向对象和类的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Gost Hand" />
+          <p class="site-author-name" itemprop="name">Gost Hand</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gosthand" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://18226961031@163.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表单数据的提交"><span class="nav-number">1.</span> <span class="nav-text">表单数据的提交</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于提交方式"><span class="nav-number">1.1.</span> <span class="nav-text">关于提交方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET提交"><span class="nav-number">1.1.1.</span> <span class="nav-text">GET提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST提交"><span class="nav-number">1.1.2.</span> <span class="nav-text">POST提交</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于数据提交的安全性问题"><span class="nav-number">1.2.</span> <span class="nav-text">关于数据提交的安全性问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gost Hand</span>
+</div>
+
+
+<div>
+  <a href="http://www.miitbeian.gov.cn/">备案：皖ICP备17007942号-1</a>
+<div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+    
+
+   
+        <!-- UY BEGIN -->
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+        <!-- UY END -->
+    
+  
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
