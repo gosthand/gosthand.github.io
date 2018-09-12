@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{background:#000;
+            color:rgb(236,132,57)}
+
+        h1	{font:small-caps 167% Arial,Helvetica,sans-serif}
+
+        #container {
+            text-align:center;
+            margin:0 auto;
+            top:450px;
+            width:550px;
+            -moz-perspective: 900px;
+            -webkit-perspective: 900}
+
+        #container:hover * {
+            -moz-animation-play-state:paused;
+            -webkit-animation-play-state:paused}
+
+        #frame {width: 33px;
+            -moz-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;  /* translate must be last */
+            -moz-transform: rotateX(35deg) rotateY(45deg) rotateZ(15deg) translate3d(325px,-70px,50px);
+            -webkit-transform: rotateX(35deg) rotateY(45deg) rotateZ(15deg) translate3d(325px,-70px,50px)}
+
+        .strip {-moz-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            -moz-animation: spin 25s infinite linear;
+            -webkit-animation: spin 25s infinite linear}
+
+        .strip div {
+            position: absolute;
+            background: #000 url(a.jpg) center center;  /* background image is 792px 320px, try with green-hills or thailand-sunrise.jpg */
+            background-repeat:repeat;
+            background-size:100% ;
+            border: solid rgb(145,87,0);
+            border-width: thin 0;
+            height:320px;
+            width:34px;
+            opacity: 1;}
+
+        .strip .a {background-position: 0 0;
+            -moz-transform: rotateY(0deg) translateZ(124px);
+            -webkit-transform: rotateY(0deg) translateZ(124px)}
+
+        .strip .b {background-position: 759px 0;
+            -moz-transform: rotateY(15deg) translateZ(124px);
+            -webkit-transform: rotateY(15deg) translateZ(124px)}
+
+        .strip .c {background-position: 726px 0;
+            -moz-transform: rotateY(30deg) translateZ(124px);
+            -webkit-transform: rotateY(30deg) translateZ(124px)}
+
+        .strip .d {background-position: 693px 0;
+            -moz-transform: rotateY(45deg) translateZ(124px);
+            -webkit-transform: rotateY(45deg) translateZ(124px)}
+
+        .strip .e {background-position: 660px 0;
+            -moz-transform: rotateY(60deg) translateZ(124px);
+            -webkit-transform: rotateY(60deg) translateZ(124px)}
+
+        .strip .f {background-position: 627px 0;
+            -moz-transform: rotateY(75deg) translateZ(124px);
+            -webkit-transform: rotateY(75deg) translateZ(124px)}
+
+        .strip .g {background-position: 594px 0;
+            -moz-transform: rotateY(90deg) translateZ(124px);
+            -webkit-transform: rotateY(90deg) translateZ(124px)}
+
+        .strip .h {background-position: 561px 0;
+            -moz-transform: rotateY(105deg) translateZ(124px);
+            -webkit-transform: rotateY(105deg) translateZ(124px)}
+
+        .strip .i {background-position: 528px 0;
+            -moz-transform: rotateY(120deg) translateZ(124px);
+            -webkit-transform: rotateY(120deg) translateZ(124px)}
+
+        .strip .j {background-position: 495px 0;
+            -moz-transform: rotateY(135deg) translateZ(124px);
+            -webkit-transform: rotateY(135deg) translateZ(124px)}
+
+        .strip .k {background-position: 462px 0;
+            -moz-transform: rotateY(150deg) translateZ(124px);
+            -webkit-transform: rotateY(150deg) translateZ(124px)}
+
+        .strip .l {background-position: 429px 0;
+            -moz-transform: rotateY(165deg) translateZ(124px);
+            -webkit-transform: rotateY(165deg) translateZ(124px)}
+
+        .strip .m {background-position: 396px 0;
+            -moz-transform: rotateY(180deg) translateZ(124px);
+            -webkit-transform: rotateY(180deg) translateZ(124px)}
+
+        .strip .n {background-position: 363px 0;
+            -moz-transform: rotateY(195deg) translateZ(124px);
+            -webkit-transform: rotateY(195deg) translateZ(124px)}
+
+        .strip .o {background-position: 330px 0;
+            -moz-transform: rotateY(210deg) translateZ(124px);
+            -webkit-transform: rotateY(210deg) translateZ(124px)}
+
+        .strip .p {background-position: 297px 0;
+            -moz-transform: rotateY(225deg) translateZ(124px);
+            -webkit-transform: rotateY(225deg) translateZ(124px)}
+
+        .strip .q {background-position: 264px 0;
+            -moz-transform: rotateY(240deg) translateZ(124px);
+            -webkit-transform: rotateY(240deg) translateZ(124px)}
+
+        .strip .r {background-position: 231px 0;
+            -moz-transform: rotateY(255deg) translateZ(124px);
+            -webkit-transform: rotateY(255deg) translateZ(124px)}
+
+        .strip .s {background-position: 198px 0;
+            -moz-transform: rotateY(270deg) translateZ(124px);
+            -webkit-transform: rotateY(270deg) translateZ(124px)}
+
+        .strip .t {background-position: 165px 0;
+            -moz-transform: rotateY(285deg) translateZ(124px);
+            -webkit-transform: rotateY(285deg) translateZ(124px)}
+
+        .strip .u {background-position: 132px 0;
+            -moz-transform: rotateY(300deg) translateZ(124px);
+            -webkit-transform: rotateY(300deg) translateZ(124px)}
+
+        .strip .v {background-position: 99px 0;
+            -moz-transform: rotateY(315deg) translateZ(124px);
+            -webkit-transform: rotateY(315deg) translateZ(124px)}
+
+        .strip .w {background-position: 66px 0;
+            -moz-transform: rotateY(330deg) translateZ(124px);
+            -webkit-transform: rotateY(330deg) translateZ(124px)}
+
+        .strip .x {background-position: 33px 0;
+            -moz-transform: rotateY(345deg) translateZ(124px);
+            -webkit-transform: rotateY(345deg) translateZ(124px)}
+
+        @-moz-keyframes spin {
+            from { -moz-transform: rotateY(0)}
+            to   { -moz-transform: rotateY(-360deg)}}
+
+        @-webkit-keyframes spin {
+            from { -webkit-transform: rotateY(0)}
+            to   { -webkit-transform: rotateY(-360deg)}}
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>我眼中你最美的样子</h1>
+    <div id="frame">
+        <div class="strip">
+            <div class="a"></div>
+            <div class="b"></div>
+            <div class="c"></div>
+            <div class="d"></div>
+            <div class="e"></div>
+            <div class="f"></div>
+            <div class="g"></div>
+            <div class="h"></div>
+            <div class="i"></div>
+            <div class="j"></div>
+            <div class="k"></div>
+            <div class="l"></div>
+            <div class="m"></div>
+            <div class="n"></div>
+            <div class="o"></div>
+            <div class="p"></div>
+            <div class="q"></div>
+            <div class="r"></div>
+            <div class="s"></div>
+            <div class="t"></div>
+            <div class="u"></div>
+            <div class="v"></div>
+            <div class="w"></div>
+            <div class="x"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
